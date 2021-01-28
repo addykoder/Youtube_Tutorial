@@ -1,30 +1,23 @@
-def lst(len):
-    l=[]
-    for i in range(len):
-        l.append(i)
-    return l
 
-def bin(l,e):
-    L=0
-    U=len(l)-1
-    E=(U+L)//2
-    while U>=L:
-        if l[E] == e:
-            return E
-        elif l[E] > e:
-            U = E-1
-            E = (U+L)//2
-            continue
-        elif l[E] < e:
-            L = E+1
-            E = (U + L) // 2
-            continue
+list = list(range(100))
 
+def bin(list, n):
+    l = 0
+    u = len(list) - 1
+    i = (u+l)//2
+    while u>=l:
+        if list[i] == n:
+            return i
+        elif list[i] > n:
+            u = i-1
+            i = (u+l)//2
+            continue
+        elif list[i] < n:
+            l = i+1
+            i = (u + l) // 2
+            continue
     return False
 
+print(bin(list, 130))
 
-
-list = lst(10)
-
-print(bin(list,0))
 
